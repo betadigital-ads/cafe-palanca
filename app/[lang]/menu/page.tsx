@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Revelar } from "@/components/ui/revelar";
 import { Chapa } from "@/components/ui/chapa";
 import { ProdutoAmpliavel } from "@/components/ui/produto-ampliavel";
 import { formatarPreco } from "@/lib/formatar";
@@ -20,18 +21,18 @@ export default async function PaginaMenu() {
   return (
     <>
       <header className="mx-auto w-full max-w-pagina px-4 pb-8 pt-16 md:px-8 lg:pt-24 xl:px-12">
-        <h1 className="font-serif text-4xl font-light">{dict.menu.title}</h1>
-        <p className="mt-4 max-w-leitura text-lg text-texto-suave">{dict.menu.intro}</p>
+        <h1 className="entrada font-serif text-4xl font-light">{dict.menu.title}</h1>
+        <p className="entrada mt-4 max-w-leitura text-lg text-texto-suave [--atraso:150ms]">{dict.menu.intro}</p>
       </header>
 
       {/* Índice: folheia-se o menu por categorias */}
-      <nav aria-label={dict.menu.index} className="sticky top-16 z-navbar border-y border-contorno bg-fundo/95 backdrop-blur">
+      <nav aria-label={dict.menu.index} className="entrada [--atraso:300ms] sticky top-16 z-navbar border-y border-contorno bg-fundo/95 backdrop-blur">
         <ul className="mx-auto flex w-full max-w-pagina gap-2 overflow-x-auto px-4 py-2 md:px-8 xl:px-12">
           {menu.map((c, i) => (
             <li key={c.nome} className="shrink-0">
               <a
                 href={`#categoria-${i}`}
-                className="inline-flex h-11 items-center rounded-chapa border border-contorno-forte px-5 text-sm font-medium tracking-rotulo text-texto transition-colors duration-base ease-padrao hover:bg-superficie-elevada"
+                className="inline-flex h-11 items-center rounded-chapa border border-contorno-forte px-5 text-sm font-medium tracking-rotulo text-texto transition-[background-color,transform] duration-base ease-padrao hover:-translate-y-0.5 hover:bg-superficie-elevada active:scale-95"
               >
                 {c.nome}
               </a>
@@ -50,16 +51,20 @@ export default async function PaginaMenu() {
               aria-labelledby={`categoria-titulo-${c}`}
               className="scroll-mt-36 border-b border-texto-papel-suave/30 py-10 last:border-b-0"
             >
-              <h2
-                id={`categoria-titulo-${c}`}
-                className="border-b-2 border-texto-papel-acento pb-4 font-serif text-3xl text-texto-papel"
-              >
-                {categoria.nome}
-              </h2>
+              <Revelar>
+                <h2
+                  id={`categoria-titulo-${c}`}
+                  className="font-serif text-3xl text-texto-papel"
+                >
+                  {categoria.nome}
+                </h2>
+                <span aria-hidden className="linha-desenhar mt-4 block h-0.5 w-full bg-texto-papel-acento" />
+              </Revelar>
 
               <ul className="lista-destaque mt-8 grid gap-x-12 gap-y-8 lg:grid-cols-2">
-                {categoria.itens.map((item) => (
-                  <li key={item.nome} className="item-destaque flex gap-4">
+                {categoria.itens.map((item, n) => (
+                  <li key={item.nome} className="item-destaque">
+                    <Revelar className="flex gap-4" atraso={(n % 2) * 100}>
                     <ProdutoAmpliavel
                       imagem={item.imagem}
                       nome={item.nome}
@@ -83,6 +88,7 @@ export default async function PaginaMenu() {
                       <p className="mt-1 text-sm text-texto-papel-suave">{item.descricao}</p>
                       {item.rotulo && <Chapa className="mt-3">{item.rotulo}</Chapa>}
                     </div>
+                    </Revelar>
                   </li>
                 ))}
               </ul>

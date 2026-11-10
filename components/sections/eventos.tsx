@@ -1,3 +1,4 @@
+import { Revelar } from "@/components/ui/revelar";
 import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { LOCALES, type Locale } from "@/lib/i18n/locales";
@@ -16,16 +17,18 @@ export async function Eventos({ locale, dict }: { locale: Locale; dict: Dictiona
   return (
     <section aria-labelledby="eventos-titulo" className="bg-superficie py-16 lg:py-28">
       <div className="mx-auto w-full max-w-pagina px-4 md:px-8 xl:px-12">
-        <h2 id="eventos-titulo" className="text-3xl">
-          {dict.title}
-        </h2>
-        <p className="mt-3 max-w-leitura text-texto-suave">{dict.intro}</p>
+        <Revelar>
+          <h2 id="eventos-titulo" className="text-3xl">
+            {dict.title}
+          </h2>
+          <p className="mt-3 max-w-leitura text-texto-suave">{dict.intro}</p>
+        </Revelar>
 
         <ul className="lista-destaque mt-10 grid gap-4 sm:grid-cols-2">
-          {ocorrencias.map((o) => {
+          {ocorrencias.map((o, i) => {
             const info = o.tipo === "openMic" ? dict.openMic : dict.tasting;
             return (
-              <li key={o.data + o.tipo} className="revelar">
+              <Revelar as="li" key={o.data + o.tipo} atraso={(i % 2) * 120}>
                 <article className="item-destaque cartao-destaque flex h-full flex-col overflow-hidden rounded-cartao border border-contorno bg-superficie-elevada shadow-cartao">
                   <div className="relative aspect-[3/2] overflow-hidden">
                     <Image src={IMAGENS[o.tipo]} alt={info.alt} fill sizes="(min-width:640px) 45vw, 100vw" className="imagem-zoom object-cover" />
@@ -40,7 +43,7 @@ export async function Eventos({ locale, dict }: { locale: Locale; dict: Dictiona
                     <p className="text-sm text-texto-suave">{info.text}</p>
                   </div>
                 </article>
-              </li>
+              </Revelar>
             );
           })}
         </ul>

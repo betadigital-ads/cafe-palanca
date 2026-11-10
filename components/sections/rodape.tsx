@@ -1,10 +1,11 @@
+import { Revelar } from "@/components/ui/revelar";
 import { Logotipo } from "@/components/ui/logotipo";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 export function Rodape({ dict }: { dict: Dictionary["footer"] }) {
   return (
     <footer className="border-t border-contorno bg-superficie">
-      <div className="mx-auto flex w-full max-w-pagina flex-col items-center gap-6 px-4 py-12 text-center md:px-8 xl:px-12">
+      <Revelar className="mx-auto flex w-full max-w-pagina flex-col items-center gap-6 px-4 py-12 text-center md:px-8 xl:px-12">
         <Logotipo variante="completo" className="w-44" />
         <p className="text-texto-suave">
           {dict.location}
@@ -14,7 +15,7 @@ export function Rodape({ dict }: { dict: Dictionary["footer"] }) {
             </span>
           ))}
         </p>
-      </div>
+      </Revelar>
     </footer>
   );
 }

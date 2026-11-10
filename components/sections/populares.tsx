@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Revelar } from "@/components/ui/revelar";
 import { CartaoProduto } from "@/components/ui/cartao-produto";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import type { Locale } from "@/lib/i18n/locales";
@@ -11,7 +12,7 @@ export async function Populares({ locale, dict, fechar }: { locale: Locale; dict
   return (
     <section aria-labelledby="populares-titulo" className="py-16 lg:py-28">
       <div className="mx-auto w-full max-w-pagina px-4 md:px-8 xl:px-12">
-        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        <Revelar className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <h2 id="populares-titulo" className="text-3xl">
               {dict.title}
@@ -21,14 +22,14 @@ export async function Populares({ locale, dict, fechar }: { locale: Locale; dict
           <Link href={`/${locale}/menu`} className="inline-flex min-h-11 items-center text-texto-acento underline underline-offset-4 hover:text-acao-hover">
             {dict.link}
           </Link>
-        </div>
+        </Revelar>
       </div>
       <div className="mx-auto mt-10 w-full max-w-pagina">
         <ul className="lista-destaque flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 py-4 md:scroll-px-8 md:px-8 xl:scroll-px-12 xl:px-12 [scrollbar-color:var(--color-bronze-claro)_transparent]">
           {itens.map((item, i) => (
-            <li key={item.nome} className="w-[min(16rem,75vw)] shrink-0 snap-start">
+            <Revelar as="li" variante="subir" atraso={Math.min(i, 4) * 90} key={item.nome} className="w-[min(16rem,75vw)] shrink-0 snap-start">
               <CartaoProduto item={item} id={`pop-${i}`} locale={locale} fechar={fechar} />
-            </li>
+            </Revelar>
           ))}
         </ul>
       </div>

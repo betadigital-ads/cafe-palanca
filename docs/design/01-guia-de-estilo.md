@@ -16,7 +16,7 @@ Gasta-se a ousadia num sítio: a chapa de cobre. Tudo o resto é calmo.
 2. **Um acento.** Cobre para ação e destaque. Se tudo é cobre, nada é.
 3. **Editorial.** Títulos serifados grandes e leves, muito espaço, texto alinhado à esquerda.
 4. **Fotografia primeiro.** O produto (chávena, bolo, grão) manda. A interface é moldura.
-5. **Movimento com razão.** Um momento de entrada no herói; o resto responde a ações.
+5. **Movimento com razão.** O movimento guia o olhar: entrada no herói, revelação das secções ao fazer scroll e destaque das fotografias. Sempre suave, nunca decorativo.
 6. **Legível sempre.** Contraste AA, foco visível, alvos de toque ≥ 44px.
 
 ## 3. Cor
@@ -98,9 +98,11 @@ Desktop                                  Móvel
 |---|---|---|---|
 | Resposta (hover, foco, premir) | 120–200ms | `ease-padrao` | Botões, cartões, ligações |
 | Abrir/fechar | 200ms | `ease-padrao` | Menu móvel, acordeões |
-| Entrada do herói (única) | 480ms, escalonada 80ms | `ease-saida` | Título → texto → botões → imagem |
+| Entrada ao carregar | 700–900ms, escalonada | `ease-saida` | Herói, cabeçalhos de página, barra de navegação |
+| Revelação ao scroll (`<Revelar>`) | 900ms, atraso até ~400ms | `ease-saida` | Secções, cartões, listas (uma vez por elemento) |
+| Fotografia em destaque | 1,2–1,8s | `ease-saida` | Máscara + assentar ao entrar, zoom ao hover, deslocamento suave ligado ao scroll (`/sobre`) |
 
-Sem animações de entrada por secção, sem *parallax*, sem elevação em todos os cartões. `prefers-reduced-motion` desliga tudo (já incluído em `tokens.css`).
+Regras: só CSS e um observador de interseção (sem bibliotecas); animar `opacity`/`transform`/`clip-path`; o conteúdo fica visível sem JavaScript; `prefers-reduced-motion` desliga tudo (incluído em `globals.css`). Evitar movimento contínuo e mais de um efeito por elemento.
 
 ## 8. Voz e tom (português de Portugal / Angola)
 

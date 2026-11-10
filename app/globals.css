@@ -221,12 +221,113 @@ p {
   animation: assentar 1.8s var(--ease-saida) both;
 }
 
-/* Revelação ao entrar no ecrã (só onde o navegador suporta; caso contrário o conteúdo fica simplesmente visível) */
+/* Revelação ao entrar no ecrã (componente <Revelar>): o conteúdo só fica escondido se houver JavaScript,
+ * por isso sem JS (ou com movimento reduzido) tudo aparece normalmente. */
+[data-revelar] {
+  transition:
+    opacity 0.9s var(--ease-saida) var(--atraso, 0ms),
+    transform 0.9s var(--ease-saida) var(--atraso, 0ms),
+    clip-path 1.2s var(--ease-saida) var(--atraso, 0ms);
+}
+
+[data-revelar="mascara"] {
+  clip-path: inset(0 0 0 0 round var(--radius-painel));
+}
+
+.assentar {
+  transition: transform 1.8s var(--ease-saida) var(--atraso, 0ms);
+}
+
+.linha-desenhar {
+  transform-origin: left;
+  transition: transform 1s var(--ease-saida) calc(var(--atraso, 0ms) + 250ms);
+}
+
+@media (scripting: enabled) {
+  [data-revelar]:not([data-visivel]) {
+    opacity: 0;
+  }
+  [data-revelar="subir"]:not([data-visivel]) {
+    transform: translateY(1.75rem);
+  }
+  [data-revelar="esquerda"]:not([data-visivel]) {
+    transform: translateX(-2.5rem);
+  }
+  [data-revelar="direita"]:not([data-visivel]) {
+    transform: translateX(2.5rem);
+  }
+  [data-revelar="zoom"]:not([data-visivel]) {
+    transform: scale(0.94);
+  }
+  [data-revelar="mascara"]:not([data-visivel]) {
+    opacity: 1;
+    clip-path: inset(0 100% 0 0 round var(--radius-painel));
+  }
+  [data-revelar]:not([data-visivel]) .assentar {
+    transform: scale(1.25);
+  }
+  [data-revelar]:not([data-visivel]) .linha-desenhar {
+    transform: scaleX(0);
+  }
+}
+
+/* Linha de cobre que se desenha ao carregar a página (cabeçalhos) */
+@keyframes desenhar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.linha-entrada {
+  transform-origin: left;
+  animation: desenhar 1s var(--ease-saida) var(--atraso, 400ms) both;
+}
+
+/* Descida suave da barra de navegação ao carregar */
+@keyframes descer {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.navbar-entrada {
+  animation: descer 0.7s var(--ease-saida) both;
+}
+
+/* Movimento ligado ao scroll (só onde o navegador suporta; caso contrário fica estático) */
+@keyframes paralaxe {
+  from {
+    transform: translateY(-7%) scale(1.18);
+  }
+  to {
+    transform: translateY(7%) scale(1.18);
+  }
+}
+
+@keyframes sombra-navbar {
+  to {
+    box-shadow: 0 12px 28px -14px rgb(0 0 0 / 0.7);
+  }
+}
+
 @supports (animation-timeline: view()) {
-  .revelar {
-    animation: subir linear both;
+  .paralaxe {
+    animation: paralaxe linear both;
     animation-timeline: view();
-    animation-range: entry 0% entry 35%;
+  }
+
+  .navbar-scroll {
+    animation: sombra-navbar linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 120px;
   }
 }
 
@@ -318,6 +419,8 @@ html:has(dialog[open]) {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    animation-delay: 0s !important;
     scroll-behavior: auto !important;
   }
 }
