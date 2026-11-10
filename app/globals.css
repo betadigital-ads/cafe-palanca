@@ -318,6 +318,70 @@ p {
   }
 }
 
+/* Botão flutuante do WhatsApp: respiração suave + onda cintilante */
+@keyframes respirar {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+}
+
+@keyframes onda {
+  0% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  80%,
+  100% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+}
+
+@keyframes brilho {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateX(-120%) rotate(20deg);
+  }
+  40%,
+  60% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0;
+    transform: translateX(220%) rotate(20deg);
+  }
+}
+
+.whatsapp-flutuante {
+  animation: respirar 3.2s ease-in-out infinite;
+}
+
+.whatsapp-flutuante::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #25d366;
+  z-index: -1;
+  animation: onda 2.4s ease-out infinite;
+}
+
+.whatsapp-flutuante::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.7), transparent);
+  animation: brilho 4.5s ease-in-out infinite;
+}
+
 @supports (animation-timeline: view()) {
   .paralaxe {
     animation: paralaxe linear both;
