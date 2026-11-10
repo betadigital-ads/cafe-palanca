@@ -14,8 +14,8 @@ export function Navbar({ locale, dict }: { locale: Locale; dict: Dictionary }) {
     >
       {dict.nav.skip}
     </a>
-    <header className="navbar-entrada navbar-scroll sticky top-0 z-navbar bg-fundo/95 backdrop-blur">
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-full h-10 bg-gradient-to-b from-fundo/95 to-transparent" />
+    <header className="navbar-entrada navbar-scroll navbar-fundo sticky top-0 z-navbar">
+      <div aria-hidden className="navbar-fade pointer-events-none absolute inset-x-0 top-full h-10 bg-gradient-to-b from-fundo/95 to-transparent" />
       <div className="relative mx-auto flex h-16 w-full max-w-pagina items-center justify-between gap-4 px-4 md:px-8 xl:px-12">
         <Link href={`/${locale}`} aria-label={dict.nav.home} className="flex items-center gap-3">
           <Logotipo className="h-11" priority />

@@ -312,9 +312,31 @@ p {
   }
 }
 
+/* Barra sólida por defeito; onde há scroll-timeline começa transparente sobre o herói e solidifica ao descer */
+.navbar-fundo {
+  background-color: color-mix(in srgb, var(--color-fundo) 95%, transparent);
+  backdrop-filter: blur(8px);
+}
+
 @keyframes sombra-navbar {
+  from {
+    background-color: transparent;
+    backdrop-filter: blur(0);
+    box-shadow: 0 12px 28px -14px rgb(0 0 0 / 0);
+  }
   to {
+    background-color: color-mix(in srgb, var(--color-fundo) 95%, transparent);
+    backdrop-filter: blur(8px);
     box-shadow: 0 12px 28px -14px rgb(0 0 0 / 0.7);
+  }
+}
+
+@keyframes fade-navbar {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -390,6 +412,12 @@ p {
 
   .navbar-scroll {
     animation: sombra-navbar linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 120px;
+  }
+
+  .navbar-fade {
+    animation: fade-navbar linear both;
     animation-timeline: scroll(root);
     animation-range: 0 120px;
   }

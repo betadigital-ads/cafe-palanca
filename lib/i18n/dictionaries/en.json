@@ -25,8 +25,9 @@
   },
   "hero": {
     "alt": "Inside the café, with a wooden counter and warm light.",
-    "title": "Your neighbourhood café, made at the counter.",
-    "text": "Speciality coffee, pastries fresh from the oven and light lunches. There's open mic on Fridays and coffee tasting on Saturdays.",
+    "title": "Speciality coffee, pastries fresh from the oven and light lunches, served every day at",
+    "titleBrand": "Café Palanca",
+    "text": "Come in, sit down and make yourself at home. There's open mic on Fridays and coffee tasting on Saturdays.",
     "ctaMenu": "View menu"
   },
   "popular": {
