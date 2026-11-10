@@ -4,8 +4,7 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
 // Única faixa de papel creme da página.
 export function FaixaValores({ dict }: { dict: Dictionary["values"] }) {
   return (
-    <section aria-label="Café Palanca" className="relative bg-superficie-papel text-texto-papel">
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-superficie to-transparent" />
+    <section aria-label="Café Palanca" className="bg-superficie-papel text-texto-papel">
       <ul className="mx-auto grid w-full max-w-pagina gap-8 px-4 py-14 sm:grid-cols-2 md:px-8 lg:grid-cols-4 xl:px-12">
         {dict.items.map((v, i) => (
           <Revelar as="li" key={v.title} atraso={i * 100}>

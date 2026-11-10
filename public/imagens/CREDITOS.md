@@ -29,3 +29,5 @@ Todas as fotografias vêm do [Pexels](https://www.pexels.com) e usam a [licença
 - `sobre-padaria.webp` — https://www.pexels.com/photo/30890368/
 - `sobre-equipa.webp` — https://www.pexels.com/photo/30867857/
 - `menu/tosta-abacate.webp` — https://www.pexels.com/photo/30471825/
+
+- `heroi.webp` — fotografia fornecida pelo cliente (captura do herói), com o texto e a interface retirados.
