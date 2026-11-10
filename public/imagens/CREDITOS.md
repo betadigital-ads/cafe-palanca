@@ -21,7 +21,6 @@ Todas as fotografias vêm do [Pexels](https://www.pexels.com) e usam a [licença
 - `menu/cafe-gelado.webp` — https://www.pexels.com/photo/11136849/
 - `menu/cold-brew.webp` — https://www.pexels.com/photo/18297842/
 - `menu/frappe-caramelo.webp` — https://www.pexels.com/photo/17558646/
-- `heroi.webp` — https://www.pexels.com/photo/34153867/
 - `evento-open-mic.webp` — https://www.pexels.com/photo/12311203/
 - `evento-degustacao.webp` — https://www.pexels.com/photo/34505585/
 - `sobre-balcao.webp` — https://www.pexels.com/photo/34839289/
@@ -30,4 +29,4 @@ Todas as fotografias vêm do [Pexels](https://www.pexels.com) e usam a [licença
 - `sobre-equipa.webp` — https://www.pexels.com/photo/30867857/
 - `menu/tosta-abacate.webp` — https://www.pexels.com/photo/30471825/
 
-- `heroi.webp` — fotografia fornecida pelo cliente (captura do herói), com o texto e a interface retirados.
+- `heroi-cafe.webp` — fotografia fornecida pelo cliente (chávena com vapor sobre mesa de madeira).

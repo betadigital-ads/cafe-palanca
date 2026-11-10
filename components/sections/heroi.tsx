@@ -10,14 +10,18 @@ import { LOCALES, type Locale } from "@/lib/i18n/locales";
 export function Heroi({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
     <section className="relative isolate -mt-16 flex min-h-svh flex-col overflow-hidden">
-      <Image src="/imagens/heroi.webp" alt={dict.hero.alt} fill priority sizes="100vw" className="heroi-imagem -z-20 object-cover" />
-      <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-b from-fundo/85 via-fundo/45 to-fundo/75" />
+      <Image src="/imagens/heroi-cafe.webp" alt={dict.hero.alt} fill priority sizes="100vw" className="heroi-imagem -z-20 object-cover" />
+      <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-b from-fundo/50 via-fundo/25 to-fundo/55" />
       <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-b from-transparent via-fundo/60 to-fundo md:h-64" />
 
-      <div className="mx-auto flex w-full max-w-pagina flex-1 flex-col items-center justify-center px-4 pb-10 pt-28 text-center md:px-8 xl:px-12">
-        <h1 className="entrada max-w-4xl text-balance font-serif text-4xl font-light leading-[1.08] text-texto/60 md:text-5xl lg:text-6xl">
-          {dict.hero.title} <span className="font-normal text-texto">{dict.hero.titleBrand}</span>
+      <div className="mx-auto flex w-full max-w-pagina flex-1 flex-col items-center justify-center px-4 pb-24 pt-28 text-center md:pb-16 md:px-8 xl:px-12">
+        <h1 className="entrada max-w-4xl font-serif text-4xl font-normal leading-[1.08] text-texto drop-shadow-[0_2px_14px_rgb(0_0_0/0.5)] sm:text-5xl md:text-6xl lg:text-7xl">
+          <span className="block">{dict.hero.title}</span>
+          <span className="block">{dict.hero.titleLine2}</span>
         </h1>
+        <p className="entrada mt-5 max-w-xl text-balance text-base leading-relaxed text-texto/90 drop-shadow-[0_1px_10px_rgb(0_0_0/0.6)] md:text-lg [--atraso:100ms]">
+          {dict.hero.text}
+        </p>
         <div className="entrada mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4 [--atraso:200ms]">
           <Link
             href={`/${locale}/menu`}
@@ -30,10 +34,6 @@ export function Heroi({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </Link>
           <Reserva dict={dict.booking} localeTag={LOCALES[locale]} variante="principal" />
         </div>
-      </div>
-
-      <div className="mx-auto w-full max-w-pagina px-4 pb-24 md:px-8 md:pb-10 xl:px-12">
-        <p className="entrada max-w-sm text-sm leading-relaxed text-texto/75 [--atraso:400ms]">{dict.hero.text}</p>
       </div>
     </section>
   );
