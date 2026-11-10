@@ -10,7 +10,7 @@ export async function Populares({ locale, dict, fechar }: { locale: Locale; dict
   const itens = (await getMenu(locale)).flatMap((c) => c.itens).filter((i) => i.rotulo);
 
   return (
-    <section aria-labelledby="populares-titulo" className="py-16 lg:py-28">
+    <section aria-labelledby="populares-titulo" className="relative bg-gradient-to-b from-fundo via-fundo to-superficie py-16 lg:py-28">
       <div className="mx-auto w-full max-w-pagina px-4 md:px-8 xl:px-12">
         <Revelar className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
@@ -25,7 +25,7 @@ export async function Populares({ locale, dict, fechar }: { locale: Locale; dict
         </Revelar>
       </div>
       <div className="mx-auto mt-10 w-full max-w-pagina">
-        <ul className="lista-destaque flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 py-4 md:scroll-px-8 md:px-8 xl:scroll-px-12 xl:px-12 [scrollbar-color:var(--color-bronze-claro)_transparent]">
+        <ul className="lista-destaque flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 py-4 md:scroll-px-8 md:px-8 xl:scroll-px-12 xl:px-12 lista-fade [scrollbar-color:var(--color-bronze-claro)_transparent]">
           {itens.map((item, i) => (
             <Revelar as="li" variante="subir" atraso={Math.min(i, 4) * 90} key={item.nome} className="w-[min(16rem,75vw)] shrink-0 snap-start">
               <CartaoProduto item={item} id={`pop-${i}`} locale={locale} fechar={fechar} />

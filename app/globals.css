@@ -516,3 +516,9 @@ html:has(dialog[open]) {
     scroll-behavior: auto !important;
   }
 }
+
+/* Carrossel: as margens laterais esbatem-se em vez de cortar o cartão a direito */
+.lista-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent 100%);
+}
