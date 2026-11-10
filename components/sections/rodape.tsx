@@ -7,7 +7,12 @@ export function Rodape({ dict }: { dict: Dictionary["footer"] }) {
       <div className="mx-auto flex w-full max-w-pagina flex-col items-center gap-6 px-4 py-12 text-center md:px-8 xl:px-12">
         <Logotipo variante="completo" className="w-44" />
         <p className="text-texto-suave">
-          {dict.location} · {dict.hours}
+          {dict.location}
+          {dict.hours.split(" · ").map((linha) => (
+            <span key={linha} className="block">
+              {linha}
+            </span>
+          ))}
         </p>
       </div>
     </footer>
