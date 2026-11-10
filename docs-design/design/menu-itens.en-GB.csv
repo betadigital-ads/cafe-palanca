@@ -1,0 +1,21 @@
+category,name,description,price,batch,image
+Espresso drinks,Espresso,"A short, intense shot with thick crema. Angolan beans.",800,,espresso.webp
+Espresso drinks,Macchiato,"Espresso marked with a spoonful of milk foam.",1000,,macchiato.webp
+Espresso drinks,Cappuccino,"Espresso, steamed milk and creamy foam, dusted with cocoa.",1500,Popular,cappuccino.webp
+Espresso drinks,Flat white,"Double espresso with silky milk and no foam.",1600,,flat-white.webp
+Espresso drinks,Latte Cobre,"Double espresso, steamed milk and salted caramel.",1900,House favourite,latte-cobre.webp
+Pastries,Pastel de nata,"Crisp puff pastry and egg custard, served warm.",700,Popular,pastel-de-nata.webp
+Pastries,Butter croissant,"Buttery laminated pastry, baked golden every morning.",900,,croissant.webp
+Pastries,Blueberry muffin,"Moist crumb with whole blueberries and sugar on top.",1100,,muffin.webp
+Pastries,Carrot cake,"Grated carrot with a dark chocolate topping.",1500,,bolo-cenoura.webp
+Pastries,Chocolate cake,"Layers of chocolate sponge and silky ganache.",1800,House favourite,bolo-chocolate.webp
+Sandwiches,Ham and cheese toastie,"Ham and cheese in toasted sliced bread.",1800,Popular,tosta-mista.webp
+Sandwiches,Roasted vegetable sandwich,"Grilled courgette and pepper, hummus and rocket in ciabatta.",2600,,sanduiche-vegetariana.webp
+Sandwiches,Grilled chicken,"Chicken breast, lemon mayo and rocket in a baguette.",2800,,frango-grelhado.webp
+Sandwiches,Garlic steak roll,"Garlic-marinated beef steak in a crusty roll.",3000,,prego-no-pao.webp
+Sandwiches,Avocado and egg on toast,"Avocado, poached egg and seeds on sourdough.",3200,House favourite,tosta-abacate.webp
+Cold drinks,Iced hibiscus tea,"Hibiscus and passion fruit, sweetened with honey.",1300,,cha-hibisco.webp
+Cold drinks,Ginger lemonade,"Lemon, fresh ginger and mint.",1400,,limonada-gengibre.webp
+Cold drinks,Iced latte,"Double espresso, cold milk and ice.",1700,Popular,cafe-gelado.webp
+Cold drinks,Cold brew,"Coffee steeped cold for twelve hours.",1800,,cold-brew.webp
+Cold drinks,Caramel frappé,"Coffee, milk and caramel blended with ice.",2200,,frappe-caramelo.webp

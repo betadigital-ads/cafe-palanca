@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "title": "Café Palanca",
+    "description": "Café de especialidade, pastelaria fresca e almoços leves, num café de bairro em Luanda.",
+    "menuTitle": "Menu",
+    "menuDescription": "Bebidas de espresso, pastelaria, sanduíches e bebidas frias do Café Palanca.",
+    "aboutTitle": "Sobre nós",
+    "aboutDescription": "A história dos irmãos Kiala e do café de bairro que abriram em Luanda em 2024."
+  },
+  "nav": {
+    "label": "Principal",
+    "home": "Café Palanca, página inicial",
+    "start": "Início",
+    "menu": "Menu",
+    "about": "Sobre nós",
+    "language": "Idioma",
+    "languages": {
+      "pt": "Português",
+      "en": "English"
+    },
+    "open": "Abrir menu",
+    "close": "Fechar menu",
+    "skip": "Saltar para o conteúdo"
+  },
+  "hero": {
+    "alt": "Interior do café, com balcão de madeira e luz quente.",
+    "title": "O café do bairro, feito ao balcão.",
+    "text": "Café de especialidade, pastelaria do forno e almoços leves. Às sextas há microfone aberto, aos sábados provamos café.",
+    "ctaMenu": "Ver menu"
+  },
+  "popular": {
+    "title": "Os preferidos da casa",
+    "intro": "O que mais sai do balcão, escolhido por quem passa por cá.",
+    "link": "Ver menu completo"
+  },
+  "events": {
+    "title": "Próximos eventos",
+    "intro": "Entrada livre. Chega cedo para teres mesa.",
+    "at": "às",
+    "openMic": {
+      "title": "Noite de microfone aberto",
+      "text": "Sobe ao palco com uma música, um poema ou uma história. Todas as sextas, a partir das 20:00.",
+      "alt": "Microfone antigo num palco, com luzes ao fundo."
+    },
+    "tasting": {
+      "title": "Degustação de café",
+      "text": "Três cafés de origem angolana, provados com o Tomás, do grão à chávena. Todos os sábados de manhã.",
+      "alt": "Chávenas e colheres numa mesa de madeira, prontas para provar café."
+    }
+  },
+  "values": {
+    "items": [
+      {
+        "title": "Grão angolano",
+        "text": "Torrado em pequenos lotes."
+      },
+      {
+        "title": "Feito ao balcão",
+        "text": "Tudo preparado na hora."
+      },
+      {
+        "title": "Pastelaria do dia",
+        "text": "Cozida de manhã, vendida até acabar."
+      },
+      {
+        "title": "Mesa para todos",
+        "text": "Sozinho, em grupo ou com o portátil."
+      }
+    ]
+  },
+  "booking": {
+    "button": "Reservar mesa",
+    "title": "Reservar mesa",
+    "intro": "Diz-nos quando queres vir. Abrimos o WhatsApp com o pedido escrito, só tens de o enviar.",
+    "name": "Nome",
+    "group": "Número de pessoas",
+    "person": "pessoa",
+    "people": "pessoas",
+    "date": "Data",
+    "time": "Hora",
+    "choose": "Escolhe a hora",
+    "submit": "Continuar no WhatsApp",
+    "cancel": "Cancelar",
+    "close": "Fechar",
+    "errorName": "Escreve o teu nome.",
+    "errorDate": "Escolhe uma data a partir de hoje.",
+    "errorTime": "Escolhe uma hora.",
+    "done": "Pedido preparado",
+    "doneText": "Abrimos o WhatsApp com a tua reserva. Se não abriu, confirma que o teu navegador permite janelas novas e tenta outra vez.",
+    "message": "Olá! Quero reservar uma mesa no Café Palanca. Nome: {name}. Pessoas: {group}. Data: {date}. Hora: {time}."
+  },
+  "menu": {
+    "title": "Menu",
+    "intro": "Tudo feito ao balcão. Preços em kwanzas.",
+    "index": "Categorias do menu",
+    "close": "Fechar"
+  },
+  "about": {
+    "title": "Dois irmãos, um balcão e muito café.",
+    "intro": "O Café Palanca abriu em 2024, numa rua tranquila de Luanda, porque a Domingas e o Tomás queriam um sítio onde toda a gente se senta à vontade.",
+    "blocks": [
+      {
+        "title": "O Tomás foi buscar o grão a casa",
+        "text": "O irmão mais novo, Tomás, passou dois anos no Amboim, no Kwanza Sul, a aprender com famílias que cultivam café há gerações. Hoje escolhe o grão diretamente com elas e torra-o em pequenos lotes, às terças e quintas de manhã.",
+        "alt": "Grãos de café acabados de torrar a cair de uma torrefadora."
+      },
+      {
+        "title": "A Domingas aprendeu a fazer café em Lisboa",
+        "text": "A Domingas Kiala cresceu em Luanda e foi estudar para Lisboa aos 19 anos. Pagou o curso a trabalhar numa pequena torrefação, onde percebeu que um bom espresso se faz com paciência. Voltou em 2022 com uma máquina em segunda mão e uma ideia fixa: servir em Luanda o café que gostava de beber.",
+        "alt": "Barista de avental a segurar uma chávena de café."
+      },
+      {
+        "title": "A Dona Rosa manda na pastelaria",
+        "text": "As receitas do bolo de cenoura e dos pastéis são da mãe deles, a Dona Rosa. Ainda aparece ao balcão aos sábados para provar tudo e dizer, sem cerimónia, o que pode ficar melhor.",
+        "alt": "Montra de uma pastelaria com pastéis e pães acabados de cozer."
+      }
+    ],
+    "counter": {
+      "alt": "Balcão do café, com máquina de espresso e prateleiras de madeira."
+    },
+    "palanca": {
+      "title": "Porquê Palanca?",
+      "text": "A palanca-negra é um símbolo de Angola. Tem raízes aqui e segue o seu caminho de cornos erguidos. É assim que queremos servir café: com orgulho no que é nosso e portas abertas a quem chega."
+    },
+    "cta": {
+      "title": "Passa por cá",
+      "text": "Há sempre uma mesa livre e uma chávena a aquecer."
+    }
+  },
+  "footer": {
+    "location": "Luanda, Angola",
+    "hours": "Segunda a sábado, das 08:00 às 21:00"
+  }
+}

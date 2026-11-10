@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "title": "Café Palanca",
+    "description": "Speciality coffee, fresh pastries and light lunches, in a neighbourhood café in Luanda.",
+    "menuTitle": "Menu",
+    "menuDescription": "Espresso drinks, pastries, sandwiches and cold drinks at Café Palanca.",
+    "aboutTitle": "About us",
+    "aboutDescription": "The story of the Kiala siblings and the neighbourhood café they opened in Luanda in 2024."
+  },
+  "nav": {
+    "label": "Main",
+    "home": "Café Palanca, home page",
+    "start": "Home",
+    "menu": "Menu",
+    "about": "About us",
+    "language": "Language",
+    "languages": {
+      "pt": "Português",
+      "en": "English"
+    },
+    "open": "Open menu",
+    "close": "Close menu",
+    "skip": "Skip to content"
+  },
+  "hero": {
+    "alt": "Inside the café, with a wooden counter and warm light.",
+    "title": "Your neighbourhood café, made at the counter.",
+    "text": "Speciality coffee, pastries fresh from the oven and light lunches. There's open mic on Fridays and coffee tasting on Saturdays.",
+    "ctaMenu": "View menu"
+  },
+  "popular": {
+    "title": "House favourites",
+    "intro": "What leaves the counter most often, chosen by the people who drop in.",
+    "link": "View full menu"
+  },
+  "events": {
+    "title": "Upcoming events",
+    "intro": "Free entry. Come early to get a table.",
+    "at": "at",
+    "openMic": {
+      "title": "Open mic night",
+      "text": "Step up with a song, a poem or a story. Every Friday from 8pm.",
+      "alt": "A vintage microphone on a stage, with lights behind."
+    },
+    "tasting": {
+      "title": "Coffee tasting",
+      "text": "Three Angolan coffees, tasted with Tomás, from bean to cup. Every Saturday morning.",
+      "alt": "Cups and spoons on a wooden table, ready for a coffee tasting."
+    }
+  },
+  "values": {
+    "items": [
+      {
+        "title": "Angolan beans",
+        "text": "Roasted in small batches."
+      },
+      {
+        "title": "Made at the counter",
+        "text": "Everything prepared to order."
+      },
+      {
+        "title": "Pastries of the day",
+        "text": "Baked in the morning, sold until they're gone."
+      },
+      {
+        "title": "A table for everyone",
+        "text": "On your own, with friends or with a laptop."
+      }
+    ]
+  },
+  "booking": {
+    "button": "Book a table",
+    "title": "Book a table",
+    "intro": "Tell us when you'd like to come. We'll open WhatsApp with your request already written, so you only need to send it.",
+    "name": "Name",
+    "group": "Party size",
+    "person": "person",
+    "people": "people",
+    "date": "Date",
+    "time": "Time",
+    "choose": "Choose a time",
+    "submit": "Continue on WhatsApp",
+    "cancel": "Cancel",
+    "close": "Close",
+    "errorName": "Enter your name.",
+    "errorDate": "Choose a date from today onwards.",
+    "errorTime": "Choose a time.",
+    "done": "Request ready",
+    "doneText": "We've opened WhatsApp with your booking. If it didn't open, check that your browser allows new windows and try again.",
+    "message": "Hello! I'd like to book a table at Café Palanca. Name: {name}. Party size: {group}. Date: {date}. Time: {time}."
+  },
+  "menu": {
+    "title": "Menu",
+    "intro": "Everything made at the counter. Prices in kwanzas.",
+    "index": "Menu categories",
+    "close": "Close"
+  },
+  "about": {
+    "title": "Two siblings, one counter and a lot of coffee.",
+    "intro": "Café Palanca opened in 2024 on a quiet street in Luanda, because Domingas and Tomás wanted a place where everyone feels at home.",
+    "blocks": [
+      {
+        "title": "Tomás went to the source for the beans",
+        "text": "Her younger brother Tomás spent two years in Amboim, in Kwanza Sul, learning from families who have grown coffee for generations. Today he chooses the beans with them directly and roasts in small batches on Tuesday and Thursday mornings.",
+        "alt": "Freshly roasted coffee beans tumbling out of a roaster."
+      },
+      {
+        "title": "Domingas learned to make coffee in Lisbon",
+        "text": "Domingas Kiala grew up in Luanda and went to study in Lisbon at 19. She paid her way working at a small roastery, where she learned that a good espresso takes patience. She came back in 2022 with a second-hand machine and one idea: to serve the coffee she loved to drink in Luanda.",
+        "alt": "A barista in an apron holding a cup of coffee."
+      },
+      {
+        "title": "Dona Rosa runs the bakery",
+        "text": "The carrot cake and custard tart recipes are their mother's, Dona Rosa. She still turns up at the counter on Saturdays to taste everything and tell them, without ceremony, what could be better.",
+        "alt": "A bakery display with pastries and bread fresh from the oven."
+      }
+    ],
+    "counter": {
+      "alt": "The café counter, with an espresso machine and wooden shelves."
+    },
+    "palanca": {
+      "title": "Why Palanca?",
+      "text": "The sable antelope, the palanca negra, is a symbol of Angola. It has roots here and goes its own way, horns held high. That's how we want to serve coffee: proud of what's ours, with the door open to whoever walks in."
+    },
+    "cta": {
+      "title": "Drop in",
+      "text": "There's always a free table and a cup warming."
+    }
+  },
+  "footer": {
+    "location": "Luanda, Angola",
+    "hours": "Monday to Saturday, 8am to 9pm"
+  }
+}

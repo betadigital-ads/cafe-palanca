@@ -1,0 +1,203 @@
+/*
+ * Café Palanca — Design tokens (fonte única de verdade)
+ * Tailwind CSS v4 (CSS-first). Para aplicar: substituir o conteúdo de app/globals.css por este ficheiro
+ * (mantém-se o `@import "tailwindcss"` na primeira linha).
+ *
+ * Camadas:
+ *  1. Primitivos  (@theme)        -> paleta, escala, raios… geram utilitários (bg-espresso, text-creme, rounded-chapa…)
+ *  2. Semânticos  (@theme inline) -> papéis (bg-fundo, text-texto, border-contorno-forte…). Usar estes nos componentes.
+ *  3. Base                        -> reset mínimo, foco, movimento reduzido
+ */
+@import "tailwindcss";
+
+/* ───────────────────────── 1. PRIMITIVOS ───────────────────────── */
+@theme {
+  /* Cor — tons de torra */
+  --color-espresso: #15100c;
+  --color-torra: #1f1813;
+  --color-cacau: #2c2119;
+  --color-bronze: #4a3626;
+  --color-bronze-claro: #86705b; /* contornos de campos: 4.0:1 sobre espresso */
+
+  /* Cor — cobre (acento) */
+  --color-cobre: #c9854a;
+  --color-cobre-claro: #dda06a;
+  --color-cobre-pressionado: #b87640;
+  --color-cobre-escuro: #8a4f22; /* texto cobre sobre papel creme: 5.2:1 */
+
+  /* Cor — creme e latte */
+  --color-creme: #efe5d4;
+  --color-papel: #e2d4bd; /* faixa "papel rasgado", sombra do papel */
+  --color-latte: #b3a491;
+
+  /* Cor — estados (ajustados ao tema escuro) */
+  --color-sucesso: #8fb07a;
+  --color-aviso: #e0b04f;
+  --color-erro: #e5806a;
+
+  /* Tipografia — famílias (variáveis definidas por next/font em layout.tsx) */
+  --font-display: var(--font-newsreader), "Iowan Old Style", Georgia, serif;
+  --font-corpo: var(--font-instrument), "Segoe UI", system-ui, sans-serif;
+
+  /* Tipografia — escala fluida (razão ≈ 1.25 em ecrã pequeno, ≈ 1.333 em ecrã grande) */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.55;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-xl--line-height: 1.35;
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --text-2xl--line-height: 1.2;
+  --text-3xl: clamp(2rem, 1.6rem + 2vw, 3rem);
+  --text-3xl--line-height: 1.1;
+  --text-4xl: clamp(2.5rem, 1.8rem + 3.5vw, 4.5rem);
+  --text-4xl--line-height: 1.02;
+  --text-5xl: clamp(3rem, 2rem + 5vw, 6rem);
+  --text-5xl--line-height: 0.98;
+
+  --tracking-display: -0.02em;
+  --tracking-corpo: 0;
+  --tracking-rotulo: 0.01em;
+
+  /* Espaço — base de 4px (Tailwind usa --spacing para p-*, gap-*, m-*) */
+  --spacing: 0.25rem;
+  --container-pagina: 75rem; /* 1200px */
+  --container-leitura: 40rem; /* ≈ 65 caracteres */
+
+  /* Raios — hierarquia, não um raio único */
+  --radius-campo: 0.5rem; /* inputs, tags pequenas */
+  --radius-cartao: 1rem; /* cartões de produto, painéis */
+  --radius-painel: 1.75rem; /* blocos grandes, imagens de secção */
+  --radius-chapa: 62.4375rem; /* estádio/oval da chapa de cobre (botões, selos, filtros) */
+
+  /* Sombras — quentes, nunca cinzento neutro */
+  --shadow-cartao: 0 1px 0 0 rgb(239 229 212 / 0.04) inset, 0 12px 32px -12px rgb(0 0 0 / 0.55);
+  --shadow-elevada: 0 1px 0 0 rgb(239 229 212 / 0.06) inset, 0 24px 48px -16px rgb(0 0 0 / 0.7);
+  --shadow-chapa: 0 1px 0 0 rgb(255 226 190 / 0.45) inset, 0 -1px 0 0 rgb(80 40 10 / 0.5) inset,
+    0 6px 16px -6px rgb(201 133 74 / 0.5);
+  --shadow-foco: 0 0 0 2px var(--color-espresso), 0 0 0 4px var(--color-cobre-claro);
+
+  /* Movimento */
+  --ease-saida: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-padrao: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-rapida: 120ms;
+  --duration-base: 200ms;
+  --duration-lenta: 480ms;
+
+  /* Breakpoints (mobile-first) */
+  --breakpoint-sm: 40rem; /* 640 */
+  --breakpoint-md: 48rem; /* 768 */
+  --breakpoint-lg: 64rem; /* 1024 */
+  --breakpoint-xl: 80rem; /* 1280 */
+
+  /* Camadas */
+  --z-navbar: 40;
+  --z-menu: 50;
+  --z-modal: 60;
+  --z-toast: 70;
+}
+
+/* ───────────────────────── 2. SEMÂNTICOS ───────────────────────── */
+@theme inline {
+  /* Superfícies */
+  --color-fundo: var(--color-espresso);
+  --color-superficie: var(--color-torra);
+  --color-superficie-elevada: var(--color-cacau);
+  --color-superficie-papel: var(--color-creme);
+
+  /* Texto (sobre superfícies escuras) */
+  --color-texto: var(--color-creme);
+  --color-texto-suave: var(--color-latte);
+  --color-texto-acento: var(--color-cobre-claro);
+  /* Texto (sobre papel creme) */
+  --color-texto-papel: var(--color-espresso);
+  --color-texto-papel-suave: var(--color-bronze);
+  --color-texto-papel-acento: var(--color-cobre-escuro);
+
+  /* Contornos */
+  --color-contorno: var(--color-bronze); /* decorativo (cartões, divisórias) */
+  --color-contorno-forte: var(--color-bronze-claro); /* componentes interativos: ≥ 3:1 */
+
+  /* Ação */
+  --color-acao: var(--color-cobre);
+  --color-acao-hover: var(--color-cobre-claro);
+  --color-acao-ativa: var(--color-cobre-pressionado);
+  --color-acao-texto: var(--color-espresso);
+
+  /* Fontes */
+  --font-sans: var(--font-corpo);
+  --font-serif: var(--font-display);
+}
+
+/* ───────────────────────── 2b. UTILITÁRIOS DE TOKENS ─────────────────────────
+ * O Tailwind v4 não tem espaços de nomes para durações nem z-index; estes utilitários expõem os tokens. */
+@utility duration-rapida { transition-duration: var(--duration-rapida); }
+@utility duration-base { transition-duration: var(--duration-base); }
+@utility duration-lenta { transition-duration: var(--duration-lenta); }
+@utility z-navbar { z-index: var(--z-navbar); }
+@utility z-menu { z-index: var(--z-menu); }
+@utility z-modal { z-index: var(--z-modal); }
+@utility z-toast { z-index: var(--z-toast); }
+
+/* ───────────────────────── 3. BASE ───────────────────────── */
+:root {
+  color-scheme: dark;
+  /* Acabamento metálico do cobre: usar em botão principal e selo (bg-[image:var(--gradiente-cobre)]) */
+  --gradiente-cobre: linear-gradient(160deg, #e0a56f 0%, #c9854a 45%, #b87640 100%);
+  /* Brilho de bronze para fundos de placa */
+  --gradiente-bronze: radial-gradient(120% 90% at 30% 0%, #3a2a1d 0%, #2c2119 55%, #1f1813 100%);
+}
+
+html {
+  background: var(--color-fundo);
+  color: var(--color-texto);
+  font-family: var(--font-sans);
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--color-cobre);
+  color: var(--color-espresso);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cobre-claro);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,21 @@
+category,name,description,price,batch,image
+Bebidas de espresso,Espresso,"Dose curta e intensa, com creme espesso. Grão de Angola.",800,,espresso.webp
+Bebidas de espresso,Macchiato,"Espresso marcado com uma colher de espuma de leite.",1000,,macchiato.webp
+Bebidas de espresso,Cappuccino,"Espresso, leite vaporizado e espuma cremosa, com cacau por cima.",1500,Popular,cappuccino.webp
+Bebidas de espresso,Flat white,"Espresso duplo com leite sedoso, sem espuma.",1600,,flat-white.webp
+Bebidas de espresso,Latte Cobre,"Espresso duplo, leite vaporizado e caramelo de sal.",1900,Favorito da casa,latte-cobre.webp
+Pastelaria,Pastel de nata,"Massa folhada estaladiça e creme de ovo, servido morno.",700,Popular,pastel-de-nata.webp
+Pastelaria,Croissant de manteiga,"Folhado de manteiga, dourado ao forno todas as manhãs.",900,,croissant.webp
+Pastelaria,Muffin de mirtilo,"Miolo húmido com mirtilos inteiros e açúcar por cima.",1100,,muffin.webp
+Pastelaria,Bolo de cenoura,"Cenoura ralada e cobertura de chocolate negro.",1500,,bolo-cenoura.webp
+Pastelaria,Bolo de chocolate,"Camadas de chocolate e ganache de seda.",1800,Favorito da casa,bolo-chocolate.webp
+Sanduíches,Tosta mista,"Fiambre e queijo em pão de forma tostado.",1800,Popular,tosta-mista.webp
+Sanduíches,Sanduíche vegetariana,"Courgette e pimento grelhados, húmus e rúcula em ciabatta.",2600,,sanduiche-vegetariana.webp
+Sanduíches,Frango grelhado,"Peito de frango, maionese de limão e rúcula em baguete.",2800,,frango-grelhado.webp
+Sanduíches,Prego no pão,"Bife de vaca marinado em alho, num pão estaladiço.",3000,,prego-no-pao.webp
+Sanduíches,Tosta de abacate e ovo,"Abacate, ovo escalfado e sementes em pão de fermentação natural.",3200,Favorito da casa,tosta-abacate.webp
+Bebidas frias,Chá gelado de hibisco,"Hibisco e maracujá, adoçado com mel.",1300,,cha-hibisco.webp
+Bebidas frias,Limonada de gengibre,"Limão, gengibre fresco e hortelã.",1400,,limonada-gengibre.webp
+Bebidas frias,Café gelado,"Espresso duplo, leite frio e gelo.",1700,Popular,cafe-gelado.webp
+Bebidas frias,Cold brew,"Café infusionado a frio durante doze horas.",1800,,cold-brew.webp
+Bebidas frias,Frappé de caramelo,"Café, leite e caramelo batidos com gelo.",2200,,frappe-caramelo.webp

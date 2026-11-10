@@ -1,0 +1,183 @@
+[
+  {
+    "url": "https://www.pexels.com/photo/1233528/",
+    "nome": "espresso",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/685529/",
+    "nome": "macchiato",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/12703064/",
+    "nome": "cappuccino",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/13623762/",
+    "nome": "flat-white",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/214333/",
+    "nome": "latte-cobre",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/35554378/",
+    "nome": "pastel-de-nata",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/6202223/",
+    "nome": "croissant",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/7935281/",
+    "nome": "muffin",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/5742606/",
+    "nome": "bolo-cenoura",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/24247232/",
+    "nome": "bolo-chocolate",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/15110224/",
+    "nome": "tosta-mista",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/14410236/",
+    "nome": "sanduiche-vegetariana",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/17498978/",
+    "nome": "frango-grelhado",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/19585044/",
+    "nome": "prego-no-pao",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/30471825/",
+    "nome": "tosta-abacate",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/15208980/",
+    "nome": "cha-hibisco",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/4134388/",
+    "nome": "limonada-gengibre",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/11136849/",
+    "nome": "cafe-gelado",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/18297842/",
+    "nome": "cold-brew",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/17558646/",
+    "nome": "frappe-caramelo",
+    "pasta": "menu",
+    "largura": 800,
+    "altura": 1000
+  },
+  {
+    "url": "https://www.pexels.com/photo/34153867/",
+    "nome": "heroi",
+    "largura": 1920
+  },
+  {
+    "url": "https://www.pexels.com/photo/12311203/",
+    "nome": "evento-open-mic",
+    "largura": 1200,
+    "altura": 800
+  },
+  {
+    "url": "https://www.pexels.com/photo/34505585/",
+    "nome": "evento-degustacao",
+    "largura": 1200,
+    "altura": 800
+  },
+  {
+    "url": "https://www.pexels.com/photo/34839289/",
+    "nome": "sobre-balcao",
+    "largura": 1200,
+    "altura": 900
+  },
+  {
+    "url": "https://www.pexels.com/photo/4264047/",
+    "nome": "sobre-torra",
+    "largura": 1200,
+    "altura": 900
+  },
+  {
+    "url": "https://www.pexels.com/photo/30890368/",
+    "nome": "sobre-padaria",
+    "largura": 1200,
+    "altura": 900
+  },
+  {
+    "url": "https://www.pexels.com/photo/30867857/",
+    "nome": "sobre-equipa",
+    "largura": 1000,
+    "altura": 1250
+  }
+]
