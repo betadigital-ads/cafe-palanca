@@ -15,7 +15,7 @@ export async function Eventos({ locale, dict }: { locale: Locale; dict: Dictiona
   const formatar = new Intl.DateTimeFormat(LOCALES[locale], { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" });
 
   return (
-    <section aria-labelledby="eventos-titulo" className="bg-superficie py-16 lg:py-28">
+    <section aria-labelledby="eventos-titulo" className="bg-superficie py-12 lg:py-16">
       <div className="mx-auto w-full max-w-pagina px-4 md:px-8 xl:px-12">
         <Revelar>
           <h2 id="eventos-titulo" className="text-3xl">

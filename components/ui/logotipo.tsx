@@ -7,7 +7,7 @@ export function Logotipo({ variante = "emblema", className, priority }: { varian
   const completo = variante === "completo";
   return (
     <Image
-      src={completo ? "/marca/palanca-chapa.jpg" : "/marca/palanca-emblema.jpg"}
+      src={completo ? "/marca/palanca-chapa.webp" : "/marca/palanca-emblema.webp"}
       alt="Café Palanca"
       width={completo ? 710 : 180}
       height={completo ? 710 : 176}

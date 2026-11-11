@@ -230,12 +230,8 @@ p {
     clip-path 1.2s var(--ease-saida) var(--atraso, 0ms);
 }
 
-[data-revelar="mascara"] {
-  clip-path: inset(0 0 0 0 round var(--radius-painel));
-}
-
 .assentar {
-  transition: transform 1.8s var(--ease-saida) var(--atraso, 0ms);
+  transition: transform 1.4s var(--ease-saida) var(--atraso, 0ms);
 }
 
 .linha-desenhar {
@@ -260,11 +256,11 @@ p {
     transform: scale(0.94);
   }
   [data-revelar="mascara"]:not([data-visivel]) {
-    opacity: 1;
-    clip-path: inset(0 100% 0 0 round var(--radius-painel));
+    transform: translateY(1.25rem) scale(0.98);
   }
   [data-revelar]:not([data-visivel]) .assentar {
-    transform: scale(1.25);
+    transform: scale(1.08);
+    will-change: transform;
   }
   [data-revelar]:not([data-visivel]) .linha-desenhar {
     transform: scaleX(0);
@@ -305,10 +301,10 @@ p {
 /* Movimento ligado ao scroll (só onde o navegador suporta; caso contrário fica estático) */
 @keyframes paralaxe {
   from {
-    transform: translateY(-7%) scale(1.18);
+    transform: translate3d(0, -3%, 0) scale(1.08);
   }
   to {
-    transform: translateY(7%) scale(1.18);
+    transform: translate3d(0, 3%, 0) scale(1.08);
   }
 }
 
@@ -351,23 +347,11 @@ p {
   }
 }
 
-@keyframes onda {
-  0% {
-    opacity: 0.55;
-    transform: scale(1);
-  }
-  80%,
-  100% {
-    opacity: 0;
-    transform: scale(1.9);
-  }
-}
-
 @keyframes brilho {
   0%,
   100% {
     opacity: 0;
-    transform: translateX(-120%) rotate(20deg);
+    transform: translate3d(-120%, 0, 0) skewX(-20deg);
   }
   40%,
   60% {
@@ -375,22 +359,14 @@ p {
   }
   70% {
     opacity: 0;
-    transform: translateX(220%) rotate(20deg);
+    transform: translate3d(220%, 0, 0) skewX(-20deg);
   }
 }
 
+/* A sombra e a posição ficam no <a> (estático); só o disco interior anima */
 .whatsapp-flutuante {
   animation: respirar 3.2s ease-in-out infinite;
-}
-
-.whatsapp-flutuante::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  background: #25d366;
-  z-index: -1;
-  animation: onda 2.4s ease-out infinite;
+  will-change: transform;
 }
 
 .whatsapp-flutuante::after {
@@ -401,13 +377,26 @@ p {
   left: 0;
   width: 40%;
   background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.7), transparent);
+  opacity: 0;
   animation: brilho 4.5s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Em ecrãs tácteis mantém-se só a respiração: o brilho é a parte mais cara */
+@media (pointer: coarse) {
+  .whatsapp-flutuante::after {
+    display: none;
+  }
 }
 
 @supports (animation-timeline: view()) {
-  .paralaxe {
-    animation: paralaxe linear both;
-    animation-timeline: view();
+  /* Parallax só em ecrãs largos e sem preferência por menos movimento (no telemóvel o scroll fica liso) */
+  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+    .paralaxe {
+      animation: paralaxe linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
   }
 
   .navbar-scroll {

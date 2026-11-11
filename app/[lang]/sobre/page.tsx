@@ -23,13 +23,13 @@ export default async function Sobre() {
 
   return (
     <>
-      <header className="mx-auto w-full max-w-pagina px-4 pb-16 pt-16 md:px-8 lg:pb-24 lg:pt-24 xl:px-12">
+      <header className="mx-auto w-full max-w-pagina px-4 pb-10 pt-12 md:px-8 lg:pb-14 lg:pt-16 xl:px-12">
         <h1 className="entrada max-w-3xl font-serif text-4xl font-light">{about.title}</h1>
         <span aria-hidden className="linha-entrada mt-6 block h-0.5 w-24 bg-acao" />
         <p className="entrada mt-6 max-w-leitura text-lg text-texto-suave [--atraso:200ms]">{about.intro}</p>
       </header>
 
-      <div className="mx-auto flex w-full max-w-pagina flex-col gap-24 overflow-x-clip px-4 pb-20 md:px-8 lg:gap-36 lg:pb-32 xl:px-12">
+      <div className="mx-auto flex w-full max-w-pagina flex-col gap-14 overflow-x-clip px-4 pb-12 md:px-8 lg:gap-20 lg:pb-16 xl:px-12">
         {about.blocks.map((bloco, i) => {
           const retrato = i === 0;
           const inverso = i % 2 === 1;
@@ -52,6 +52,7 @@ export default async function Sobre() {
                 <Revelar variante="mascara" className="relative">
                   <FotoAmpliavel
                     src={FOTOS[i]}
+                    prioridade={i < 2}
                     alt={bloco.alt}
                     fechar={fechar}
                     orientacao={retrato ? "retrato" : "paisagem"}
@@ -86,7 +87,7 @@ export default async function Sobre() {
         })}
       </div>
 
-      <section aria-labelledby="palanca-titulo" className="overflow-x-clip bg-superficie py-16 lg:py-28">
+      <section aria-labelledby="palanca-titulo" className="overflow-x-clip bg-superficie py-12 lg:py-16">
         <div className="mx-auto w-full max-w-pagina px-4 md:px-8 xl:px-12">
           <Revelar variante="mascara">
             <FotoAmpliavel
@@ -94,7 +95,7 @@ export default async function Sobre() {
               alt={about.counter.alt}
               fechar={fechar}
               sizes="(min-width:1280px) 1100px, 100vw"
-              className="aspect-[4/3] md:aspect-[16/9] lg:aspect-[21/9]"
+              className="aspect-[4/3] md:aspect-[16/9]"
             />
           </Revelar>
           <Revelar variante="subir" atraso={400} className="relative z-10 -mt-12 ml-auto max-w-xl px-2 sm:px-6 lg:-mt-20 lg:mr-8">
@@ -109,7 +110,7 @@ export default async function Sobre() {
         </div>
       </section>
 
-      <section aria-labelledby="visita-titulo" className="py-16 text-center lg:py-28">
+      <section aria-labelledby="visita-titulo" className="py-12 text-center lg:py-16">
         <Revelar variante="subir" className="mx-auto flex w-full max-w-pagina flex-col items-center px-4 md:px-8 xl:px-12">
           <h2 id="visita-titulo" className="text-3xl">
             {about.cta.title}

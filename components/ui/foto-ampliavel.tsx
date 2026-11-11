@@ -11,10 +11,11 @@ type Props = {
   orientacao?: "retrato" | "paisagem";
   sizes: string;
   className?: string; // proporção e tamanho da miniatura
+  prioridade?: boolean; // carrega logo (fotos visíveis no topo da página)
 };
 
 // Fotografia com destaque: zoom ao passar o rato, movimento ligado ao scroll e ampliação num <dialog> nativo.
-export function FotoAmpliavel({ src, alt, fechar, orientacao = "paisagem", sizes, className }: Props) {
+export function FotoAmpliavel({ src, alt, fechar, orientacao = "paisagem", sizes, className, prioridade }: Props) {
   const ref = useRef<HTMLDialogElement>(null);
   const retrato = orientacao === "retrato";
 
@@ -29,7 +30,7 @@ export function FotoAmpliavel({ src, alt, fechar, orientacao = "paisagem", sizes
       >
         <div className="assentar absolute inset-0">
           <div className="absolute inset-0 transition-transform duration-[900ms] ease-saida group-hover/foto:scale-[1.06] group-focus-visible/foto:scale-[1.06]">
-            <Image src={src} alt="" fill sizes={sizes} className="paralaxe object-cover" />
+            <Image src={src} alt="" fill sizes={sizes} quality={80} priority={prioridade} className="paralaxe object-cover" />
           </div>
         </div>
         <span

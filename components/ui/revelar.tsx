@@ -26,7 +26,7 @@ export function Revelar({ as: Tag = "div", variante = "subir", atraso = 0, class
         mostrar();
         obs.disconnect();
       },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+      { threshold: 0.08, rootMargin: "0px 0px -4% 0px" },
     );
     obs.observe(el);
     return () => obs.disconnect();

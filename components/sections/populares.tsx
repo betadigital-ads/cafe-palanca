@@ -10,7 +10,7 @@ export async function Populares({ locale, dict, fechar }: { locale: Locale; dict
   const itens = (await getMenu(locale)).flatMap((c) => c.itens).filter((i) => i.rotulo);
 
   return (
-    <section aria-labelledby="populares-titulo" className="relative bg-gradient-to-b from-fundo via-fundo to-superficie py-16 lg:py-28">
+    <section aria-labelledby="populares-titulo" className="relative bg-gradient-to-b from-fundo via-fundo to-superficie py-12 lg:py-16">
       <div className="mx-auto w-full max-w-pagina px-4 md:px-8 xl:px-12">
         <Revelar className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
