@@ -20,8 +20,7 @@
     },
     "open": "Open menu",
     "close": "Close menu",
-    "skip": "Skip to content",
-    "whatsapp": "Chat with us on WhatsApp"
+    "skip": "Skip to content"
   },
   "hero": {
     "alt": "Steaming cup of coffee on a wooden table in a warm café interior.",
@@ -134,12 +133,13 @@
     "hours": "Monday to Friday, 6am to 8pm · Saturday, 7am to 9pm"
   },
   "chat": {
-    "title": "Café Palanca",
-    "subtitle": "Ask us anything.",
-    "greeting": "Hi! I'm the Café Palanca assistant. I can help with the menu, opening hours or bookings.",
+    "title": "Zuri",
+    "subtitle": "Café Palanca assistant",
+    "greeting": "Hello, I am Zuri, the Café Palanca assistant. I can help with the menu, opening hours or bookings.",
     "placeholder": "Type your message…",
     "send": "Send",
     "open": "Open chat",
-    "close": "Close chat"
+    "close": "Close chat",
+    "label": "Chat with Zuri"
   }
 }

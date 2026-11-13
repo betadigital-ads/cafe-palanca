@@ -3,7 +3,6 @@ import { Newsreader, Instrument_Sans } from "next/font/google";
 import { Navbar } from "@/components/sections/navbar";
 import { Rodape } from "@/components/sections/rodape";
 import { ChatbotN8n } from "@/components/ui/chatbot-n8n";
-import { WhatsappFlutuante } from "@/components/ui/whatsapp-flutuante";
 import { getDictionary, getLocale } from "@/lib/i18n/dictionaries";
 import { LOCALES } from "@/lib/i18n/locales";
 import "../globals.css";
@@ -38,14 +37,13 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const locale = await getLocale();
   const dict = await getDictionary(locale);
   return (
-    <html lang={LOCALES[locale]} className={`${newsreader.variable} ${instrument.variable}`}>
-      <body className="flex min-h-dvh flex-col bg-fundo text-texto antialiased">
+    <html lang={LOCALES[locale]} suppressHydrationWarning className={`${newsreader.variable} ${instrument.variable}`}>
+      <body suppressHydrationWarning className="flex min-h-dvh flex-col bg-fundo text-texto antialiased">
         <Navbar locale={locale} dict={dict} />
         <main id="conteudo" className="flex-1">
           {children}
         </main>
         <Rodape dict={dict.footer} />
-        <WhatsappFlutuante label={dict.nav.whatsapp} />
         <ChatbotN8n dict={dict.chat} />
       </body>
     </html>

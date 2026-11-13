@@ -336,59 +336,6 @@ p {
   }
 }
 
-/* Botão flutuante do WhatsApp: respiração suave + onda cintilante */
-@keyframes respirar {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.07);
-  }
-}
-
-@keyframes brilho {
-  0%,
-  100% {
-    opacity: 0;
-    transform: translate3d(-120%, 0, 0) skewX(-20deg);
-  }
-  40%,
-  60% {
-    opacity: 0.9;
-  }
-  70% {
-    opacity: 0;
-    transform: translate3d(220%, 0, 0) skewX(-20deg);
-  }
-}
-
-/* A sombra e a posição ficam no <a> (estático); só o disco interior anima */
-.whatsapp-flutuante {
-  animation: respirar 3.2s ease-in-out infinite;
-  will-change: transform;
-}
-
-.whatsapp-flutuante::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 40%;
-  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.7), transparent);
-  opacity: 0;
-  animation: brilho 4.5s ease-in-out infinite;
-  will-change: transform, opacity;
-}
-
-/* Em ecrãs tácteis mantém-se só a respiração: o brilho é a parte mais cara */
-@media (pointer: coarse) {
-  .whatsapp-flutuante::after {
-    display: none;
-  }
-}
-
 @supports (animation-timeline: view()) {
   /* Parallax só em ecrãs largos e sem preferência por menos movimento (no telemóvel o scroll fica liso) */
   @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
@@ -512,8 +459,8 @@ html:has(dialog[open]) {
   mask-image: linear-gradient(to right, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent 100%);
 }
 
-/* Chatbot n8n: cores da marca e posição acima do botão do WhatsApp */
-:root {
+/* Chatbot n8n: cores da marca; o botão de abrir fica no canto inferior direito */
+:root:root {
   --chat--color--primary: var(--color-cobre);
   --chat--color--primary-shade-50: var(--color-cobre-pressionado);
   --chat--color--primary--shade-100: var(--color-cobre-escuro);
@@ -528,9 +475,9 @@ html:has(dialog[open]) {
   --chat--font-family: var(--font-sans), system-ui, sans-serif;
   --chat--border-radius: var(--radius-painel);
   --chat--window--right: 1.25rem;
-  --chat--window--bottom: 6.5rem;
+  --chat--window--bottom: 1.25rem;
   --chat--window--width: min(24rem, calc(100vw - 2.5rem));
-  --chat--window--height: min(37.5rem, calc(100dvh - 11rem));
+  --chat--window--height: min(37.5rem, calc(100dvh - 9rem));
   --chat--window--z-index: 60;
   --chat--header--background: var(--color-torra);
   --chat--header--color: var(--color-creme);
@@ -539,21 +486,219 @@ html:has(dialog[open]) {
   --chat--message--bot--background: var(--color-cacau);
   --chat--message--bot--color: var(--color-creme);
   --chat--toggle--color: var(--color-espresso);
-  --chat--toggle--size: 56px;
+  --chat--toggle--size: 60px;
   --chat--input--send--button--background: transparent;
+  --chat--input--send--button--background-hover: var(--color-cacau);
+  --chat--color-disabled: var(--color-latte);
+  --chat--toggle--border-radius: 50%;
   --chat--input--send--button--color: var(--color-cobre-claro);
 }
 
 @media (min-width: 768px) {
-  :root {
+  :root:root {
     --chat--window--right: 1.75rem;
-    --chat--window--bottom: 7.5rem;
-    --chat--window--height: min(37.5rem, calc(100dvh - 12rem));
+    --chat--window--bottom: 1.75rem;
+    --chat--window--height: min(37.5rem, calc(100dvh - 10rem));
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :root {
+  :root:root {
     --chat--transition-duration: 0.01ms;
+  }
+}
+
+:root:root {
+  --chat--window--border: 1px solid var(--color-contorno);
+  --chat--window--margin-bottom: 0.75rem;
+  --chat--body--background: var(--color-espresso);
+  --chat--footer--background: var(--color-espresso);
+  --chat--footer--border-top: 1px solid var(--color-contorno);
+  --chat--input--background: var(--color-cacau);
+  --chat--input--text-color: var(--color-creme);
+  --chat--input--border-radius: var(--radius-campo);
+  --chat--message--border-radius: var(--radius-cartao);
+  --chat--toggle--background: radial-gradient(circle at 30% 25%, var(--color-cobre-claro), var(--color-cobre) 62%, var(--color-cobre-pressionado));
+  --chat--toggle--hover--background: radial-gradient(circle at 30% 25%, var(--color-cobre-claro), var(--color-cobre-claro) 45%, var(--color-cobre));
+  --chat--toggle--active--background: var(--color-cobre-pressionado);
+  --chat--input--container--background: var(--color-espresso);
+  --chat--input--container--padding: 0.75rem;
+}
+
+.chat-window-wrapper.n8n-chat .chat-window {
+  box-shadow: var(--shadow-elevada);
+}
+
+.chat-window-wrapper.n8n-chat .chat-header h1 {
+  font-family: var(--font-serif), serif;
+  font-weight: 300;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.chat-window-wrapper.n8n-chat .chat-header p {
+  color: var(--color-latte);
+  font-size: 0.95rem;
+}
+
+.chat-window-wrapper.n8n-chat .chat-get-started-footer,
+.chat-window-wrapper.n8n-chat .chat-powered-by {
+  color: var(--color-latte);
+  font-size: 0.8rem;
+}
+
+.chat-window-wrapper.n8n-chat .chat-get-started-footer a,
+.chat-window-wrapper.n8n-chat .chat-powered-by a {
+  color: var(--color-texto-acento);
+}
+
+.chat-window-wrapper.n8n-chat .chat-inputs textarea {
+  border: 1px solid var(--color-contorno-forte);
+  border-radius: var(--radius-campo);
+}
+
+.chat-window-wrapper.n8n-chat .chat-inputs textarea:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-foco);
+}
+
+.chat-window-wrapper.n8n-chat .chat-inputs textarea::placeholder {
+  color: var(--color-latte);
+}
+
+.chat-window-wrapper.n8n-chat .chat-close-button,
+.chat-window-wrapper.n8n-chat .chat-inputs-controls button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+}
+
+.chat-window-wrapper.n8n-chat .chat-message-markdown a {
+  color: var(--color-texto-acento);
+}
+
+/* Botão de abrir: chávena com três pontos (conversa), anel que pulsa e etiqueta "Fala com a Zuri" */
+.chat-window-wrapper .chat-window-toggle {
+  position: relative;
+  box-shadow: var(--shadow-elevada), 0 0 0 1px rgb(239 229 212 / 0.18) inset, 0 8px 24px -6px rgb(201 133 74 / 0.55);
+  animation: chat-flutuar 5s ease-in-out 3s infinite;
+}
+
+.chat-window-wrapper .chat-window-toggle svg {
+  display: none;
+}
+
+.chat-window-wrapper .chat-window-toggle::before {
+  content: "";
+  width: 1.75rem;
+  height: 1.75rem;
+  background: var(--color-espresso);
+  -webkit-mask: var(--chat-icone-abrir) center / contain no-repeat;
+  mask: var(--chat-icone-abrir) center / contain no-repeat;
+}
+
+.chat-window-wrapper .chat-window-toggle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--color-cobre-claro);
+  opacity: 0;
+  animation: chat-pulso 3s ease-out 2s infinite;
+  pointer-events: none;
+}
+
+.chat-window-wrapper .chat-window-toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-foco);
+}
+
+.chat-window-wrapper .chat-window-toggle[aria-expanded="true"] {
+  animation: none;
+}
+
+.chat-window-wrapper .chat-window-toggle[aria-expanded="true"]::before {
+  -webkit-mask-image: var(--chat-icone-fechar);
+  mask-image: var(--chat-icone-fechar);
+}
+
+.chat-window-wrapper .chat-window-toggle[aria-expanded="true"]::after {
+  display: none;
+}
+
+/* Etiqueta ao lado do botão: aparece uns segundos depois de a página abrir e só enquanto o chat está fechado */
+.chat-window-wrapper::after {
+  content: var(--chat-etiqueta, none);
+  position: absolute;
+  right: calc(var(--chat--toggle--size) + 0.75rem);
+  bottom: calc((var(--chat--toggle--size) - 2.75rem) / 2);
+  display: none;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  border: 1px solid var(--color-torra);
+  border-radius: var(--radius-chapa, 999px);
+  background: var(--color-cacau);
+  box-shadow: var(--shadow-elevada);
+  color: var(--color-creme);
+  font-size: 0.95rem;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: chat-etiqueta 0.7s var(--ease-saida) 2s both;
+}
+
+.chat-window-wrapper:has(.chat-window-toggle[aria-expanded="false"])::after {
+  display: inline-flex;
+}
+
+html[data-chat-visto] .chat-window-wrapper::after {
+  display: none !important;
+}
+
+@keyframes chat-pulso {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.55);
+  }
+}
+
+@keyframes chat-flutuar {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -4px;
+  }
+}
+
+@keyframes chat-etiqueta {
+  from {
+    opacity: 0;
+    transform: translateX(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+:root {
+  --chat-icone-abrir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 10h11v4.5a4.5 4.5 0 0 1-4.5 4.5h-2A4.5 4.5 0 0 1 5 14.5z'/%3E%3Cpath d='M16 11.5h1.5a2.5 2.5 0 0 1 0 5H16'/%3E%3Cpath d='M8.5 3.5c-1 1 1 2 0 3M12 3.5c-1 1 1 2 0 3'/%3E%3Ccircle cx='8.2' cy='14.4' r='.9' fill='black' stroke='none'/%3E%3Ccircle cx='10.5' cy='14.4' r='.9' fill='black' stroke='none'/%3E%3Ccircle cx='12.8' cy='14.4' r='.9' fill='black' stroke='none'/%3E%3C/svg%3E");
+  --chat-icone-fechar: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-window-wrapper .chat-window-toggle,
+  .chat-window-wrapper .chat-window-toggle::after,
+  .chat-window-wrapper::after {
+    animation: none;
+  }
+  .chat-window-wrapper .chat-window-toggle::after {
+    display: none;
   }
 }

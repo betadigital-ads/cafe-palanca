@@ -20,8 +20,7 @@
     },
     "open": "Abrir menu",
     "close": "Fechar menu",
-    "skip": "Saltar para o conteúdo",
-    "whatsapp": "Fala connosco no WhatsApp"
+    "skip": "Saltar para o conteúdo"
   },
   "hero": {
     "alt": "Chávena de café com vapor sobre uma mesa de madeira, num interior acolhedor.",
@@ -134,12 +133,13 @@
     "hours": "Segunda a sexta, das 06:00 às 20:00 · Sábado, das 07:00 às 21:00"
   },
   "chat": {
-    "title": "Café Palanca",
-    "subtitle": "Pergunta-nos o que quiseres.",
-    "greeting": "Olá! Sou o assistente do Café Palanca. Posso ajudar com o menu, horários ou reservas.",
+    "title": "Zuri",
+    "subtitle": "Assistente do Café Palanca",
+    "greeting": "Olá, eu sou a Zuri, assistente do Café Palanca. Posso ajudar com o menu, horários ou reservas.",
     "placeholder": "Escreve a tua mensagem…",
     "send": "Enviar",
     "open": "Abrir conversa",
-    "close": "Fechar conversa"
+    "close": "Fechar conversa",
+    "label": "Fala com a Zuri"
   }
 }
