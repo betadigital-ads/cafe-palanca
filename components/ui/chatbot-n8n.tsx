@@ -76,7 +76,8 @@ export function ChatbotN8n({ dict }: { dict: Dictionary["chat"] }) {
       const [{ createChat }] = await Promise.all([import("@n8n/chat"), import("@n8n/chat/style.css")]);
       if (cancelado) return;
       app = createChat({
-        webhookUrl: N8N_CHAT_URL,
+        // Em desenvolvimento passa pelo /api/chat (o n8n só aceita CORS do domínio de produção).
+        webhookUrl: process.env.NODE_ENV === "development" ? `${window.location.origin}/api/chat` : N8N_CHAT_URL,
         mode: "window",
         showWelcomeScreen: false,
         loadPreviousSession: false,
