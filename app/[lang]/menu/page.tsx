@@ -83,7 +83,7 @@ export default async function PaginaMenu() {
                           aria-hidden
                           className="min-w-4 flex-1 translate-y-[-0.25em] border-b-2 border-dotted border-texto-papel-suave/60"
                         />
-                        <span className="text-lg font-semibold tabular-nums">{formatarPreco(item.preco, locale)}</span>
+                        <span className="font-serif text-xl tabular-nums">{formatarPreco(item.preco, locale)}</span>
                       </div>
                       <p className="mt-1 text-sm text-texto-papel-suave">{item.descricao}</p>
                       {item.rotulo && <Chapa className="mt-3">{item.rotulo}</Chapa>}

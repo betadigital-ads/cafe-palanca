@@ -49,7 +49,7 @@ export function ProdutoAmpliavel({ imagem, nome, descricao, preco, rotulo, fecha
         <div className="flex flex-col gap-2 p-6">
           <h3 className="font-serif text-2xl">{nome}</h3>
           <p className="text-sm text-texto-suave">{descricao}</p>
-          <p className="pt-2 text-lg font-semibold tabular-nums">{preco}</p>
+          <p className="pt-2 font-serif text-xl tabular-nums">{preco}</p>
         </div>
         <button
           type="button"

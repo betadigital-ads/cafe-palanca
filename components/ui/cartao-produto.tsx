@@ -35,7 +35,7 @@ export function CartaoProduto({ item, id, locale, fechar }: { item: ItemMenu; id
           {item.nome}
         </h3>
         <p className="line-clamp-2 text-sm text-texto-suave">{item.descricao}</p>
-        <p className="mt-auto pt-3 text-lg font-semibold tabular-nums">{preco}</p>
+        <p className="mt-auto pt-3 font-serif text-xl tabular-nums">{preco}</p>
       </div>
     </article>
   );

@@ -51,7 +51,7 @@ Regras:
 | Corpo | `text-base`/`text-lg` | Corpo | 400 | Linha ≤ 65 caracteres (`max-w-leitura`) |
 | Legenda | `text-sm` | Corpo | 400 | `texto-suave` |
 | Rótulo | `text-sm` | Corpo | 500 | tracking +0.01em |
-| Preço | `text-lg` | Corpo | 600 | Números tabulares (`tabular-nums`) |
+| Preço | `text-xl` | Serifada (igual ao nome do artigo) | 400 | Números tabulares (`tabular-nums`); milhares com vírgula (`1,800 Kz`) |
 
 Evitar: realçar só uma palavra de um título com outra cor ou itálico; rótulos em maiúsculas por todo o lado; um rótulo pequeno por cima de cada título. Um rótulo acima de um título só se classificar mesmo o conteúdo (ex.: "Menu de inverno"), em frase normal.
 
