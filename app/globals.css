@@ -486,7 +486,7 @@ html:has(dialog[open]) {
   --chat--message--bot--background: var(--color-cacau);
   --chat--message--bot--color: var(--color-creme);
   --chat--toggle--color: var(--color-espresso);
-  --chat--toggle--size: 60px;
+  --chat--toggle--size: 68px;
   --chat--input--send--button--background: transparent;
   --chat--input--send--button--background-hover: var(--color-cacau);
   --chat--color-disabled: var(--color-latte);
@@ -589,8 +589,8 @@ html:has(dialog[open]) {
 
 .chat-window-wrapper .chat-window-toggle::before {
   content: "";
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2.1rem;
+  height: 2.1rem;
   background: var(--color-espresso);
   -webkit-mask: var(--chat-icone-abrir) center / contain no-repeat;
   mask: var(--chat-icone-abrir) center / contain no-repeat;
@@ -701,4 +701,15 @@ html[data-chat-visto] .chat-window-wrapper::after {
   .chat-window-wrapper .chat-window-toggle::after {
     display: none;
   }
+}
+
+/* Campo de escrita sem barra de rolagem nem alça de redimensionar (o campo cresce com o texto) */
+.chat-window-wrapper.n8n-chat .chat-inputs textarea {
+  resize: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.chat-window-wrapper.n8n-chat .chat-inputs textarea::-webkit-scrollbar {
+  display: none;
 }
