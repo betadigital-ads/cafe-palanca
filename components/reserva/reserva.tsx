@@ -2,7 +2,7 @@
 
 import { useId, useRef, useState } from "react";
 import { classesBotao } from "@/components/ui/botao";
-import { HORA_ABERTURA, HORA_ULTIMA_RESERVA, MAX_GRUPO, WHATSAPP } from "@/lib/contacto";
+import { HORA_ABERTURA, HORA_ULTIMA_RESERVA, MAX_GRUPO } from "@/lib/contacto";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 type Erros = { name?: string; date?: string; time?: string };
@@ -28,7 +28,6 @@ const dataLocalHoje = () => {
 
 export function Reserva({
   dict,
-  localeTag,
   variante = "principal",
   className,
 }: {
@@ -42,16 +41,20 @@ export function Reserva({
   const [erros, setErros] = useState<Erros>({});
   const [hoje, setHoje] = useState("");
   const [enviado, setEnviado] = useState(false);
+  const [aEnviar, setAEnviar] = useState(false);
+  const [erroEnvio, setErroEnvio] = useState(false);
 
   function abrir() {
     setErros({});
     setEnviado(false);
+    setErroEnvio(false);
     setHoje(dataLocalHoje());
     dialogo.current?.showModal();
   }
 
-  function enviar(e: React.FormEvent<HTMLFormElement>) {
+  async function enviar(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (aEnviar) return;
     const dados = new FormData(e.currentTarget);
     const nome = String(dados.get("name") ?? "").trim();
     const grupo = String(dados.get("group") ?? "1");
@@ -65,14 +68,21 @@ export function Reserva({
     setErros(novos);
     if (Object.keys(novos).length) return;
 
-    const dataLegivel = new Intl.DateTimeFormat(localeTag, { dateStyle: "full" }).format(new Date(`${data}T12:00:00`));
-    const texto = dict.message
-      .replace("{name}", nome)
-      .replace("{group}", grupo)
-      .replace("{date}", dataLegivel)
-      .replace("{time}", hora);
-    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank", "noopener");
-    setEnviado(true);
+    setErroEnvio(false);
+    setAEnviar(true);
+    try {
+      const res = await fetch("/api/reserva", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ name: nome, group: grupo, date: data, time: hora }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      setEnviado(true);
+    } catch {
+      setErroEnvio(true);
+    } finally {
+      setAEnviar(false);
+    }
   }
 
   return (
@@ -187,12 +197,18 @@ export function Reserva({
                 </div>
               </div>
 
+              {erroEnvio && (
+                <p role="alert" className="text-sm text-erro">
+                  {dict.errorSend}
+                </p>
+              )}
+
               <div className="flex flex-col-reverse gap-3 pt-2 sm:flex-row sm:justify-end">
                 <button type="button" onClick={() => dialogo.current?.close()} className={classesBotao("contorno")}>
                   {dict.cancel}
                 </button>
-                <button type="submit" className={classesBotao("principal")}>
-                  {dict.submit}
+                <button type="submit" disabled={aEnviar} className={classesBotao("principal")}>
+                  {aEnviar ? dict.sending : dict.submit}
                 </button>
               </div>
             </form>

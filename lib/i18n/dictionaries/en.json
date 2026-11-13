@@ -72,7 +72,7 @@
   "booking": {
     "button": "Book a table",
     "title": "Book a table",
-    "intro": "Tell us when you'd like to come. We'll open WhatsApp with your request already written, so you only need to send it.",
+    "intro": "Tell us when you'd like to come and we'll take care of your booking.",
     "name": "Name",
     "group": "Party size",
     "person": "person",
@@ -86,8 +86,10 @@
     "errorName": "Enter your name.",
     "errorDate": "Choose a date from today onwards.",
     "errorTime": "Choose a time.",
-    "done": "Request ready",
-    "doneText": "We've opened WhatsApp with your booking. If it didn't open, check that your browser allows new windows and try again.",
+    "sending": "Sending...",
+    "errorSend": "We couldn't send your booking. Please try again in a moment.",
+    "done": "Request sent",
+    "doneText": "We've received your booking request. See you soon!",
     "message": "Hello! I'd like to book a table at Café Palanca. Name: {name}. Party size: {group}. Date: {date}. Time: {time}."
   },
   "menu": {

@@ -22,7 +22,7 @@ export function Navbar({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <span className="hidden font-serif text-xl min-[480px]:inline">Café Palanca</span>
         </Link>
         <Navegacao locale={locale} dict={dict.nav}>
-          <Reserva dict={dict.booking} localeTag={LOCALES[locale]} variante="contorno" className="h-11" />
+          <Reserva dict={dict.booking} localeTag={LOCALES[locale]} variante="principal" className="h-11" />
         </Navegacao>
       </div>
     </header>

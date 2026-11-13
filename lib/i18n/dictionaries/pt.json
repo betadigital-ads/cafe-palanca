@@ -72,7 +72,7 @@
   "booking": {
     "button": "Reservar mesa",
     "title": "Reservar mesa",
-    "intro": "Diz-nos quando queres vir. Abrimos o WhatsApp com o pedido escrito, só tens de o enviar.",
+    "intro": "Diz-nos quando queres vir e nós tratamos da tua reserva.",
     "name": "Nome",
     "group": "Número de pessoas",
     "person": "pessoa",
@@ -86,8 +86,10 @@
     "errorName": "Escreve o teu nome.",
     "errorDate": "Escolhe uma data a partir de hoje.",
     "errorTime": "Escolhe uma hora.",
-    "done": "Pedido preparado",
-    "doneText": "Abrimos o WhatsApp com a tua reserva. Se não abriu, confirma que o teu navegador permite janelas novas e tenta outra vez.",
+    "sending": "A enviar...",
+    "errorSend": "Não foi possível enviar a reserva. Tenta novamente dentro de instantes.",
+    "done": "Pedido enviado",
+    "doneText": "Recebemos o teu pedido de reserva. Até breve!",
     "message": "Olá! Quero reservar uma mesa no Café Palanca. Nome: {name}. Pessoas: {group}. Data: {date}. Hora: {time}."
   },
   "menu": {
