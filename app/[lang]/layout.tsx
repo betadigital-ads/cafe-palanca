@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Newsreader, Instrument_Sans } from "next/font/google";
 import { Navbar } from "@/components/sections/navbar";
 import { Rodape } from "@/components/sections/rodape";
+import { ChatbotN8n } from "@/components/ui/chatbot-n8n";
 import { WhatsappFlutuante } from "@/components/ui/whatsapp-flutuante";
 import { getDictionary, getLocale } from "@/lib/i18n/dictionaries";
 import { LOCALES } from "@/lib/i18n/locales";
@@ -45,6 +46,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
         </main>
         <Rodape dict={dict.footer} />
         <WhatsappFlutuante label={dict.nav.whatsapp} />
+        <ChatbotN8n dict={dict.chat} />
       </body>
     </html>
   );

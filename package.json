@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@n8n/chat": "^1.46.5",
     "next": "16.4.5",
     "react": "19.3.0",
     "react-dom": "19.3.0"

@@ -511,3 +511,49 @@ html:has(dialog[open]) {
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent 100%);
   mask-image: linear-gradient(to right, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent 100%);
 }
+
+/* Chatbot n8n: cores da marca e posição acima do botão do WhatsApp */
+:root {
+  --chat--color--primary: var(--color-cobre);
+  --chat--color--primary-shade-50: var(--color-cobre-pressionado);
+  --chat--color--primary--shade-100: var(--color-cobre-escuro);
+  --chat--color--secondary: var(--color-cobre);
+  --chat--color-secondary-shade-50: var(--color-cobre-claro);
+  --chat--color-white: var(--color-cacau);
+  --chat--color-light: var(--color-espresso);
+  --chat--color-light-shade-50: var(--color-torra);
+  --chat--color-light-shade-100: var(--color-torra);
+  --chat--color-dark: var(--color-creme);
+  --chat--color-typing: var(--color-latte);
+  --chat--font-family: var(--font-sans), system-ui, sans-serif;
+  --chat--border-radius: var(--radius-painel);
+  --chat--window--right: 1.25rem;
+  --chat--window--bottom: 6.5rem;
+  --chat--window--width: min(24rem, calc(100vw - 2.5rem));
+  --chat--window--height: min(37.5rem, calc(100dvh - 11rem));
+  --chat--window--z-index: 60;
+  --chat--header--background: var(--color-torra);
+  --chat--header--color: var(--color-creme);
+  --chat--message--user--background: var(--color-cobre);
+  --chat--message--user--color: var(--color-espresso);
+  --chat--message--bot--background: var(--color-cacau);
+  --chat--message--bot--color: var(--color-creme);
+  --chat--toggle--color: var(--color-espresso);
+  --chat--toggle--size: 56px;
+  --chat--input--send--button--background: transparent;
+  --chat--input--send--button--color: var(--color-cobre-claro);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --chat--window--right: 1.75rem;
+    --chat--window--bottom: 7.5rem;
+    --chat--window--height: min(37.5rem, calc(100dvh - 12rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --chat--transition-duration: 0.01ms;
+  }
+}

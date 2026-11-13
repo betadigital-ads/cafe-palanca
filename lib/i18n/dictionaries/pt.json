@@ -132,5 +132,14 @@
   "footer": {
     "location": "Luanda, Angola",
     "hours": "Segunda a sexta, das 06:00 às 20:00 · Sábado, das 07:00 às 21:00"
+  },
+  "chat": {
+    "title": "Café Palanca",
+    "subtitle": "Pergunta-nos o que quiseres.",
+    "greeting": "Olá! Sou o assistente do Café Palanca. Posso ajudar com o menu, horários ou reservas.",
+    "placeholder": "Escreve a tua mensagem…",
+    "send": "Enviar",
+    "open": "Abrir conversa",
+    "close": "Fechar conversa"
   }
 }
